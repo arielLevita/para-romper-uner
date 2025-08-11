@@ -1,14 +1,20 @@
+:root {
+    --color-principal: purple;
+    --color-secundario: blue;
+}
+
 h1 {
-    color: red;
+    color: var(--color-principal);
 }
 
 h2 {
-    background-color: green;
+    background-color: var(--color-secundario);
 }
 
 button {
     padding: 1rem;
     font-size: large;
+    border: 2px solid var(--color-principal);
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
