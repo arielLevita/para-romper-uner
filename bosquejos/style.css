@@ -6,6 +6,12 @@
     box-sizing: border-box;
 }
 
+body {
+    min-height: 100vh; /* Ocupa toda la pantalla */
+    display: flex;
+    flex-direction: column;
+}
+
 /*Aquí comienza el estilo del encabezado*/
 
 header{ /*Encabezado*/
@@ -14,7 +20,7 @@ header{ /*Encabezado*/
     background-color: #1c6677; /*Color de fondo del encabezado*/
     justify-content: space-between; /*Distribuye el espacio: izquierda, centro, derecha*/
     align-items: center; /*Centra verticalmente los elementos*/
-    padding: 10px 20px; /*Espaciado interno: 10px arriba y abajo, 20px izquierda y derecha*/
+    padding: 0px 20px; /*Espaciado interno: 0px arriba y abajo, 20px izquierda y derecha*/
 }
 
 a{ /*Vinculos del encabezado*/
@@ -29,12 +35,13 @@ a{ /*Vinculos del encabezado*/
 }
 
 .logo-img{
-    height: 50px; /*Tamaño de la imagen del logo*/
-    margin-right:15px; /*Margen izquierdo entre el logo y el nombre*/
+    width: 150px; 
+    height: auto; /*Tamaño de la imagen del logo*/
+    margin-right:1px; /*Margen izquierdo entre el logo y el nombre*/
 }
 
 nav a{
-    padding: 40px;
+    padding: 20px;
 }
 
 nav a:hover{
@@ -69,4 +76,31 @@ h1 {
 img {
     height: 100px;
     aspect-ratio: 1 / 1;
+}
+
+.bloques {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c6677;
+    margin-top: auto; 
+}
+
+/* Estilo de la página institucional */
+
+.portada {
+    height: 70vh; 
+    width: 100vw; 
+    background-image: url('assets/logo-clinica.png');
+    background-position: center;    /* Centrada */
+    background-repeat: no-repeat;   /* No se repite */
+    padding: 20px;
 }
