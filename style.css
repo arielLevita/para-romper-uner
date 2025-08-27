@@ -73,3 +73,9 @@ h2 {
     color: #020202;
 }
 
+/*---SECCION DE APARTADO INSTITUCIONAL---*/
+.hospital-img img{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
