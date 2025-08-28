@@ -143,3 +143,14 @@ footer {
     background-repeat: no-repeat;   /* No se repite */
     padding: 20px;
 }
+
+/* Estilo de la página Contacto */
+.contacto {
+    height: 70vh;
+    width: 95%; 
+    margin: 15px auto;
+    padding: 10px;
+    color: rgb(247, 255, 252);
+    flex-wrap: wrap;
+    background:#1c6677
+}
