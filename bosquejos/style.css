@@ -70,3 +70,126 @@ img {
     height: 100px;
     aspect-ratio: 1 / 1;
 }
+
+/*Estilo de la página contacto*/
+
+.body-contacto{ /*Implementación de imagen de fondo*/
+    background-image: url(assets/Background.png);
+    background-size: 100vw 100vh; /*vw: 100% ancho de ventana. vh:100% alto de ventana*/
+    background-attachment: fixed; /*La imagen queda fija al hacer scroll*/
+    margin: 0;
+}
+
+.container-form{
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 30px;
+}
+
+.h3-contacto{
+    color: #ffff;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.info-form h2{
+    margin-bottom: 15px;
+    font-size: 35px;
+    color: black;
+}
+
+.info-form p{
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: black;
+    font-weight: 600;
+}
+
+.container-icono a{
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 15px;
+    color:black;
+    font-weight: 600;
+    
+}
+
+.container-icono svg{
+    margin-right: 15px;
+}
+
+.container-icono svg.bi-telephone-fill{
+    color: white;
+    background-color: rgb(8, 132, 189);
+    padding: 6px 5px;
+    border-radius: 100%;
+}
+
+.container-icono svg.bi-whatsapp{
+    color: white;
+    background-color: green;
+    padding: 6px 5px;
+    border-radius: 100%;
+}
+
+.container-icono svg.bi-envelope-at{
+    color: white;
+    background-color: red;
+    padding: 4px 4px;
+    border-radius: 5px;
+}
+
+.container-icono svg.bi-geo-alt-fill{
+    color: red;
+    background-color: rgb(251, 255, 36);
+    padding: 4px 4px;
+    border-radius: 5px;
+}
+
+.form-contacto{
+    width: 500px; /*Ancho del formulario*/
+    margin:auto;
+    background: rgb(0,0,0,0.7); /*Color y transparencia del form*/
+    padding: 30px 20px;
+    box-sizing: border-box;
+    margin-top: 10px; /*Espacio entre el form y el encabezado*/
+    border-radius: 7px;
+    font-family: Arial; /*Fuente del form*/
+}
+
+.form-contacto .campo-contacto, textarea{
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+}
+
+.form-contacto textarea{
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+.button-enviar{
+    padding: 10px 20px;
+    color: white;
+    background-color: orangered;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.button-enviar:hover{
+    background-color: rgb(187, 179, 179);
+}
