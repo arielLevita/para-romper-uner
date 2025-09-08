@@ -1,4 +1,4 @@
-const USERS = [
+/* const USERS = [
     {
         id: 1,
         name: "Ariel Levita",
@@ -52,18 +52,58 @@ function cardGenerator() {
         let div = document.createElement("div");
         div.classList.add('user-card');
         div.innerHTML = `
-            <img src="${user.image ? user.image : './assets/default-avatar.png'}" alt="Imagen de ${user.name}" />
-            <div>
-                <h4>${user.name}</h4>
+                <img src="${user.image ? user.image : './assets/default-avatar.png'}" alt="Imagen de ${user.name}" />
                 <div>
-                    <p><a href="mailto:${user.email}">${user.email}</a></p>
-                    <p><em>${user.role}</em></p>
+                    <h4>${user.name}</h4>
+                    <div>
+                        <p><a href="mailto:${user.email}">${user.email}</a></p>
+                        <p><em>${user.role}</em></p>
+                    </div>
                 </div>
-            </div>
-        `;
+            `;
         docFrag.appendChild(div);
     });
+
     document.getElementById("cards-container").appendChild(docFrag);
+} */
+
+
+
+async function traerData() {
+    const response = await fetch('data.json');
+    if (!response.ok) {
+        throw new Error('Error al traer el JSON');
+    }
+    return await response.json();
 }
 
-cardGenerator()
+async function cardGenerator() {
+    try {
+        const data = await traerData();
+        console.log(data)
+        let docFrag = document.createDocumentFragment();
+
+        data.forEach(user => {
+            let div = document.createElement("div");
+            div.classList.add('user-card');
+            div.innerHTML = `
+                <img src="${user.image ? user.image : './assets/default-avatar.png'}" alt="Imagen de ${user.name}" />
+                <div>
+                    <h4>${user.name}</h4>
+                    <div>
+                        <p><a href="mailto:${user.email}">${user.email}</a></p>
+                        <p><em>${user.role}</em></p>
+                    </div>
+                </div>
+            `;
+            docFrag.appendChild(div);
+        });
+
+        document.getElementById("cards-container").appendChild(docFrag);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+
+cardGenerator();
