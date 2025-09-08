@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.regla {
+    width: 100%;
+    display: flex;
+    margin-bottom: 50px;
+    padding: 0 1rem;
+}
+
+.regla > div {
+    flex-grow: 1;
+    text-align: center;
+    outline: 1px solid black;
+}
+
+.caja {
+    height: 200px;
+}
