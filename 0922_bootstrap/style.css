@@ -1,0 +1,29 @@
+/* div {
+    padding: 50px;
+}
+
+.midiv {
+    padding: 100px !important;
+}
+
+.caja {
+    height: fit-content;
+} */
+
+.caja {
+    padding: 300px;
+}
+
+.caja {
+    padding: 100px;
+}
+
+.boton-propio {
+    background: red;
+    padding: 2em;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
