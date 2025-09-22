@@ -1,0 +1,102 @@
+:root {
+    --color-uno: #0E7C9D;
+    --color-dos: #044166;
+    --color-tres: #1CA481;
+    --color-cuatro: #045a29;
+    --color-cinco: #e8e8e8;
+    --color-seis: #FCFCFC;
+    --color-texto: #222222;
+
+    --color-uno-rgb: 14, 124, 157;
+    --color-dos-rgb: 4, 65, 102;
+    --color-tres-rgb: 28, 164, 129;
+    --color-cuatro-rgb: 4, 90, 41;
+    --color-cinco-rgb: 232, 232, 232;
+    --color-seis-rgb: 252, 252, 252;
+    --color-texto-rgb: 34, 34, 34;
+}
+
+
+nav {
+    background-color: var(--color-cinco);
+}
+
+nav .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+nav .wrapper > a, nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    list-style-type: none;
+}
+
+nav img {
+    height: 3rem;
+    aspect-ratio: 1 / 1;
+}
+
+nav p {
+    font-weight: 700;
+    line-height: 20px;
+}
+
+nav p:first-of-type {
+    font-size: 1.5rem;
+    color: var(--color-tres);
+}
+
+nav p:last-of-type {
+    font-size: 1.2rem;
+    color: var(--color-uno);
+}
+
+.nav-link {
+    margin: 0 0.5rem;
+    font-weight: 600;
+    color: var(--color-dos);
+    text-transform: uppercase;
+    position: relative;
+}
+
+.nav-link:hover::before {
+    position: absolute;
+    content: '';
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-dos);
+}
+
+.nav-link-active {
+    color: var(--color-tres);
+    filter: drop-shadow(1px 1px 1px rgba(28, 164, 129, 0.3));
+    -webkit-filter: drop-shadow(1px 1px 1px rgba(28, 164, 129, 0.3));
+}
+
+nav button {
+    padding: 0.5em 1em 0.6em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-dos);
+    background-color: var(--color-seis);
+    border: 2px var(--color-tres) solid;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+
+nav button:hover {
+    background-color: var(--color-cinco);
+}
