@@ -106,3 +106,72 @@
 > [!NOTE]
 > Este es un trabajo en proceso.
 ---
+
+# Trabajo Final Integrador
+
+Universidad Nacional de Entre Ríos — Facultad de Ciencias de la Administración
+Tecnicatura Universitaria en Desarrollo Web
+**Trabajo Final Integrador — Primera Entrega | Segundo Cuatrimestre 2025**
+**Grupo: IDW_08**
+
+---
+
+> [!NOTE]
+> Este es un trabajo en proceso.
+
+---
+
+## 👨‍💻 Integrantes del Equipo
+
+- Ariel Levita (@arielLevita)
+- Elisa Beltramone (@Elisa-Beltramone)
+- Gabriel Osvaldo Roman (@GabrielORoman)
+- María Alejandra Olivares Contreras (@MaryOlivares)
+- Nerina Bonnin (@NerinaBonnin)
+- Walter Osvaldo Cuesta (@wox9000)
+
+---
+
+# 🏥 Bienestar Integral | Clínica
+
+---
+
+## 📋 Consigna y Objetivos (1ra Etapa)
+
+En esta primera fase, nos hemos enfocado en los objetivos principales de la consigna, que incluyen:
+
+-   Comprender cómo estructurar el contenido de una página web.
+-   Crear un sitio web que relacione a través de enlaces múltiples páginas (inicio, institucional y contacto).
+-   Conectar documentos HTML con archivos CSS.
+-   Comprender el funcionamiento de reglas, atributos y valores CSS.
+
+---
+
+## 🚀 Tecnologías Utilizadas
+
+-   **HTML:** Para estructurar el contenido de las páginas.
+-   **CSS:** Para definir estilos y conectar con los documentos HTML.
+
+---
+
+## Próximos Pasos (Etapas Futuras)
+
+El proyecto está diseñado para evolucionar. Las siguientes etapas del desarrollo se enfocarán en la implementación de las funcionalidades clave para la clínica, las cuales serán marcadas como completadas a medida que se avancen:
+
+### Funcionalidades del Rol Visitante
+
+-   [ ] **Reservas:** Permitir a los usuarios crear y visualizar reservas de turnos.
+-   [ ] **API:** Interactuar con una API Rest para intercambiar información.
+
+### Funcionalidades del Rol Administrador (CRUD)
+
+-   [ ] **Médicos:** Registrar, editar y eliminar médicos.
+-   [ ] **Especialidades:** Registrar, editar y eliminar especialidades.
+-   [ ] **Obras Sociales:** Registrar, editar y eliminar obras sociales.
+-   [ ] **Turnos:** Registrar, editar y eliminar turnos.
+
+---
+
+## 🌐 Enlaces del Proyecto
+
+-   **Repositorio GitHub:** [https://github.com/arielLevita/IDW_08](https://github.com/arielLevita/IDW_08)
