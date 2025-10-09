@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Médicos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input,
+        select {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        img {
+            max-width: 80px;
+            display: block;
+            margin: 5px 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        button {
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CRUD Médicos</h1>
+
+    <form id="medicoForm">
+        <input type="hidden" id="medicoId">
+
+        <label>Nombre: <input type="text" id="nombre" required></label>
+        <label>Apellido: <input type="text" id="apellido" required></label>
+        <label>Especialidad: <input type="text" id="especialidad" required></label>
+        <label>Imagen: <input type="file" id="imagen"></label>
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Especialidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="medicosTable"></tbody>
+    </table>
+
+    <script>
+        let medicos = [];
+
+        // Leer mock JSON al inicio
+        async function cargarMock() {
+            if (!localStorage.getItem("medicos")) {
+                const resp = await fetch("mock_medicos.json");
+                medicos = await resp.json();
+                localStorage.setItem("medicos", JSON.stringify(medicos));
+            } else {
+                medicos = JSON.parse(localStorage.getItem("medicos"));
+            }
+            renderTable();
+        }
+
+        // Renderizar tabla
+        function renderTable() {
+            const tbody = document.getElementById("medicosTable");
+            tbody.innerHTML = "";
+            medicos.forEach(m => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td><img src="${m.imagen}" alt="foto"></td>
+                    <td>${m.nombre}</td>
+                    <td>${m.apellido}</td>
+                    <td>${m.especialidad}</td>
+                    <td>
+                        <button onclick="editMedico('${m.id}')">Editar</button>
+                        <button onclick="deleteMedico('${m.id}')">Eliminar</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Guardar (crear/editar)
+        document.getElementById("medicoForm").addEventListener("submit", async e => {
+            e.preventDefault();
+
+            const id = document.getElementById("medicoId").value || Date.now().toString();
+            const nombre = document.getElementById("nombre").value;
+            const apellido = document.getElementById("apellido").value;
+            const especialidad = document.getElementById("especialidad").value;
+            const imagenInput = document.getElementById("imagen");
+
+            let imagenBase64 = "";
+            if (imagenInput.files[0]) {
+                imagenBase64 = await toBase64(imagenInput.files[0]);
+            } else {
+                // Si es edición y no se subió nueva imagen, mantener la actual
+                const existente = medicos.find(m => m.id === id);
+                imagenBase64 = existente ? existente.imagen : "";
+            }
+
+            const medico = { id, nombre, apellido, especialidad, imagen: imagenBase64 };
+
+            const index = medicos.findIndex(m => m.id === id);
+            if (index > -1) {
+                medicos[index] = medico; // actualizar
+            } else {
+                medicos.push(medico); // nuevo
+            }
+
+            localStorage.setItem("medicos", JSON.stringify(medicos));
+            renderTable();
+            e.target.reset();
+            document.getElementById("medicoId").value = "";
+        });
+
+        // Editar
+        function editMedico(id) {
+            const m = medicos.find(m => m.id === id);
+            document.getElementById("medicoId").value = m.id;
+            document.getElementById("nombre").value = m.nombre;
+            document.getElementById("apellido").value = m.apellido;
+            document.getElementById("especialidad").value = m.especialidad;
+        }
+
+        // Eliminar
+        function deleteMedico(id) {
+            if (confirm("¿Eliminar médico?")) {
+                medicos = medicos.filter(m => m.id !== id);
+                localStorage.setItem("medicos", JSON.stringify(medicos));
+                renderTable();
+            }
+        }
+
+        // Convertir File a Base64
+        function toBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        cargarMock();
+    </script>
+</body>
+
+</html>
