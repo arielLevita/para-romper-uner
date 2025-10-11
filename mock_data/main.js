@@ -1,18 +1,38 @@
 const contenedor = document.getElementById("contenedor");
 
-async function getData() {
+async function loadPage() {
+    let data;
+
+    if (localStorage.getItem("data")) {
+        data = await getDataFromLocalStorage();
+    } else {
+        data = await getDataFromJSON();
+    }
+
+    mostrarMedicos(data);
+}
+
+loadPage();
+
+async function getDataFromJSON() {
     try {
         const response = await fetch("mockData.json");
         const data = await response.json();
-        mostrarMedicos(data)
-        console.log(data.medicos);
-    }
-    catch (error) {
-        console.log(error)
+        localStorage.setItem("data", JSON.stringify(data));
+        return data;
+    } catch (error) {
+        console.log(error);
     }
 }
 
-getData()
+async function getDataFromLocalStorage() {
+    try {
+        const data = localStorage.getItem("data");
+        return JSON.parse(data);
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 function mostrarMedicos(data) {
     contenedor.innerHTML = "";
@@ -39,7 +59,7 @@ function mostrarMedicos(data) {
             medicosEspecialidad.forEach(medico => {
                 const divMed = document.createElement("div");
                 divMed.innerHTML =
-                `<p>Hoy vino a trabajar ${medico.titulo} ${medico.nombreMedico} ${medico.apellidoMedico}.</p>
+                    `<p>Hoy vino a trabajar ${medico.titulo} ${medico.nombreMedico} ${medico.apellidoMedico}.</p>
                 <img src="${medico.imagenMedico}" style="width: 100px;" />`;
                 div.appendChild(divMed);
             });
