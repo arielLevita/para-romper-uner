@@ -59,8 +59,8 @@ function mostrarMedicos(data) {
             medicosEspecialidad.forEach(medico => {
                 const divMed = document.createElement("div");
                 divMed.innerHTML =
-                    `<p>Hoy vino a trabajar ${medico.titulo} ${medico.nombreMedico} ${medico.apellidoMedico}.</p>
-                <img src="${medico.imagenMedico}" style="width: 100px;" />`;
+                    // `<p>Hoy vino a trabajar ${medico.titulo} ${medico.nombreMedico} ${medico.apellidoMedico}.</p>
+                `<img src="${medico.imagenMedico}" style="width: 100px;" />`;
                 div.appendChild(divMed);
             });
         }
