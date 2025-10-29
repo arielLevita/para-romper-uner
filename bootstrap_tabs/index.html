@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        .tab-content {
+            position: relative;
+        }
+        .tab-pane {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid mb-3">
+        <div class="row">
+            <div class="col-1 border border-black">1</div>
+            <div class="col-1 border border-black">2</div>
+            <div class="col-1 border border-black">3</div>
+            <div class="col-1 border border-black">4</div>
+            <div class="col-1 border border-black">5</div>
+            <div class="col-1 border border-black">6</div>
+            <div class="col-1 border border-black">7</div>
+            <div class="col-1 border border-black">8</div>
+            <div class="col-1 border border-black">9</div>
+            <div class="col-1 border border-black">10</div>
+            <div class="col-1 border border-black">11</div>
+            <div class="col-1 border border-black">12</div>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane"
+                type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false"
+                disabled>Disabled</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active d-flex flex-wrap gap-2" id="home-tab-pane" role="tabpanel"
+            aria-labelledby="home-tab" tabindex="0">
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+        </div>
+        <div class="tab-pane fade d-flex flex-wrap gap-2" id="profile-tab-pane" role="tabpanel"
+            aria-labelledby="profile-tab" tabindex="0">La casa de mi tía Teresa
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+        </div>
+        <div class="tab-pane fade d-flex flex-wrap gap-2" id="contact-tab-pane" role="tabpanel"
+            aria-labelledby="contact-tab" tabindex="0">La puerta de mi abuela Juanita
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+        </div>
+        <div class="tab-pane fade d-flex flex-wrap gap-2" id="disabled-tab-pane" role="tabpanel"
+            aria-labelledby="disabled-tab" tabindex="0">
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            Lo que sea
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

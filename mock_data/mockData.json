@@ -5476,5 +5476,196 @@
             "hora": "12:30",
             "disponible": true
         }
+    ],
+    "reservas": [
+        {
+            "idReserva": 1,
+            "documento": 12345678,
+            "nombreCompletoPaciente": "José Gómez",
+            "idTurno": 22,
+            "idEspecialidad": 1,
+            "idObraSocial": 2,
+            "valorConsulta": 10680
+        },
+        {
+            "idReserva": 2,
+            "documento": 34567890,
+            "nombreCompletoPaciente": "María López",
+            "idTurno": 41,
+            "idEspecialidad": 2,
+            "idObraSocial": 5,
+            "valorConsulta": 15080
+        },
+        {
+            "idReserva": 3,
+            "documento": 34567890,
+            "nombreCompletoPaciente": "María López",
+            "idTurno": 49,
+            "idEspecialidad": 2,
+            "idObraSocial": 6,
+            "valorConsulta": 17250
+        },
+        {
+            "idReserva": 4,
+            "documento": 34567890,
+            "nombreCompletoPaciente": "María López",
+            "idTurno": 57,
+            "idEspecialidad": 2,
+            "idObraSocial": 4,
+            "valorConsulta": 11500
+        },
+        {
+            "idReserva": 5,
+            "documento": 34567890,
+            "nombreCompletoPaciente": "María López",
+            "idTurno": 65,
+            "idEspecialidad": 2,
+            "idObraSocial": 5,
+            "valorConsulta": 15080
+        },
+        {
+            "idReserva": 6,
+            "documento": 23456789,
+            "nombreCompletoPaciente": "Carlos Rodríguez",
+            "idTurno": 137,
+            "idEspecialidad": 3,
+            "idObraSocial": 8,
+            "valorConsulta": 17710
+        },
+        {
+            "idReserva": 7,
+            "documento": 23456789,
+            "nombreCompletoPaciente": "Carlos Rodríguez",
+            "idTurno": 145,
+            "idEspecialidad": 3,
+            "idObraSocial": 5,
+            "valorConsulta": 15254
+        },
+        {
+            "idReserva": 8,
+            "documento": 23456789,
+            "nombreCompletoPaciente": "Carlos Rodríguez",
+            "idTurno": 153,
+            "idEspecialidad": 3,
+            "idObraSocial": 3,
+            "valorConsulta": 19500
+        },
+        {
+            "idReserva": 9,
+            "documento": 23456789,
+            "nombreCompletoPaciente": "Carlos Rodríguez",
+            "idTurno": 241,
+            "idEspecialidad": 3,
+            "idObraSocial": 16,
+            "valorConsulta": 17700
+        },
+        {
+            "idReserva": 10,
+            "documento": 45678901,
+            "nombreCompletoPaciente": "Laura Fernández",
+            "idTurno": 330,
+            "idEspecialidad": 4,
+            "idObraSocial": 7,
+            "valorConsulta": 11620
+        },
+        {
+            "idReserva": 11,
+            "documento": 45678901,
+            "nombreCompletoPaciente": "Laura Fernández",
+            "idTurno": 340,
+            "idEspecialidad": 4,
+            "idObraSocial": 9,
+            "valorConsulta": 11812
+        },
+        {
+            "idReserva": 12,
+            "documento": 45678901,
+            "nombreCompletoPaciente": "Laura Fernández",
+            "idTurno": 349,
+            "idEspecialidad": 4,
+            "idObraSocial": 13,
+            "valorConsulta": 15822
+        },
+        {
+            "idReserva": 13,
+            "documento": 45678901,
+            "nombreCompletoPaciente": "Laura Fernández",
+            "idTurno": 357,
+            "idEspecialidad": 4,
+            "idObraSocial": 7,
+            "valorConsulta": 11620
+        },
+        {
+            "idReserva": 14,
+            "documento": 56789012,
+            "nombreCompletoPaciente": "Martín Pérez",
+            "idTurno": 403,
+            "idEspecialidad": 5,
+            "idObraSocial": 17,
+            "valorConsulta": 16450
+        },
+        {
+            "idReserva": 15,
+            "documento": 56789012,
+            "nombreCompletoPaciente": "Martín Pérez",
+            "idTurno": 412,
+            "idEspecialidad": 5,
+            "idObraSocial": 18,
+            "valorConsulta": 13250
+        },
+        {
+            "idReserva": 16,
+            "documento": 56789012,
+            "nombreCompletoPaciente": "Martín Pérez",
+            "idTurno": 421,
+            "idEspecialidad": 5,
+            "idObraSocial": 14,
+            "valorConsulta": 14310
+        },
+        {
+            "idReserva": 17,
+            "documento": 56789012,
+            "nombreCompletoPaciente": "Martín Pérez",
+            "idTurno": 430,
+            "idEspecialidad": 5,
+            "idObraSocial": 17,
+            "valorConsulta": 16450
+        },
+        {
+            "idReserva": 18,
+            "documento": 67890123,
+            "nombreCompletoPaciente": "Sofía Giménez",
+            "idTurno": 521,
+            "idEspecialidad": 6,
+            "idObraSocial": 7,
+            "valorConsulta": 15288
+        },
+        {
+            "idReserva": 19,
+            "documento": 67890123,
+            "nombreCompletoPaciente": "Sofía Giménez",
+            "idTurno": 531,
+            "idEspecialidad": 6,
+            "idObraSocial": 13,
+            "valorConsulta": 18679
+        },
+        {
+            "idReserva": 20,
+            "documento": 67890123,
+            "nombreCompletoPaciente": "Sofía Giménez",
+            "idTurno": 541,
+            "idEspecialidad": 6,
+            "idObraSocial": 5,
+            "valorConsulta": 14594
+        },
+        {
+            "idReserva": 21,
+            "documento": 67890123,
+            "nombreCompletoPaciente": "Sofía Giménez",
+            "idTurno": 550,
+            "idEspecialidad": 6,
+            "idObraSocial": 7,
+            "valorConsulta": 15288
+        }
     ]
 }
