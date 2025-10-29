@@ -8,6 +8,11 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <style>
+        .tab-pane:not(.active) {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -68,18 +73,44 @@
         <div>12</div>
     </div>
 
-    <div class="container-fluid d-flex flex-wrap flex-row flex-lg-row-reverse mb-5">
-        <div class="caja col-12 col-lg-6 bg-danger"></div>
-        <div class="caja col-12 col-sm-4 col-lg-2 bg-warning"></div>
-        <div class="caja col-12 col-sm-8 col-lg-4 bg-success"></div>
-    </div>
-
-    <div class="card m-2" style="width: 18rem;">
-        <img src="../bosquejos/assets/doc3.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Laboratorio</h5>
-            <p class="card-text">Si salió algo raro de tu cuerpo, seguro lo vamos a encontrar con este super microscopio que compramos en Temu.</p>
-            <a href="#" class="btn btn-primary">Ver resultados</a>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation"> <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                aria-selected="true">Home</button> </li>
+        <li class="nav-item" role="presentation"> <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
+                aria-selected="false">Profile</button> </li>
+        <li class="nav-item" role="presentation"> <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane"
+                aria-selected="false">Contact</button> </li>
+        <li class="nav-item" role="presentation"> <button class="nav-link" id="disabled-tab" data-bs-toggle="tab"
+                data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane"
+                aria-selected="false" disabled>Disabled</button> </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active gap-2" id="home-tab-pane" role="tabpanel"
+            aria-labelledby="home-tab" tabindex="0">
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+        </div>
+        <div class="tab-pane fade gap-2" id="profile-tab-pane" role="tabpanel"
+            aria-labelledby="profile-tab" tabindex="0">La casa de mi tía Teresa <div
+                style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+        </div>
+        <div class="tab-pane fade gap-2" id="contact-tab-pane" role="tabpanel"
+            aria-labelledby="contact-tab" tabindex="0">La puerta de mi abuela Juanita <div
+                style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+        </div>
+        <div class="tab-pane fade gap-2" id="disabled-tab-pane" role="tabpanel"
+            aria-labelledby="disabled-tab" tabindex="0">
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div>
+            <div style="width: 400px; height: 200px; background-color: red; border: 2px solid black;"></div> Lo que sea
         </div>
     </div>
 

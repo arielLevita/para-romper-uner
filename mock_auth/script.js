@@ -1,24 +1,43 @@
 // =================== LOGIN ===================
-const USERS = [
-    { username: "admin", password: "1234" }
-];
+const USERS = [{
+    username: "admin",
+    password: "ac9689e2272427085e35b9d3e3e8bed88cb3434828b43b86fc0596cad4c6e270"
+    // La contraseña es "admin1234".
+}]
+
+async function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+    // console.log(Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join(""))
+    return Array.from(new Uint8Array(hashBuffer))
+        .map(b => b.toString(16).padStart(2, "0"))
+        .join("");
+}
+
+async function handleLogin(e) {
+    e.preventDefault();
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    const passHash = await hashPassword(password);
+    const user = USERS.find(u => u.username === username && u.password === passHash);
+
+    if (user) {
+        alert("Login correcto");
+        localStorage.setItem("auth", JSON.stringify({ username, isAdmin: true }));
+        window.location.href = "admin.html";
+    } else {
+        alert("Usuario o contraseña incorrectos");
+    }
+}
 
 if (document.getElementById("loginForm")) {
     const loginForm = document.getElementById("loginForm");
-    loginForm.addEventListener("submit", e => {
-        e.preventDefault();
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-
-        const user = USERS.find(u => u.username === username && u.password === password);
-        if (user) {
-            localStorage.setItem("auth", JSON.stringify({ username, isAdmin: true }));
-            window.location.href = "admin.html";
-        } else {
-            alert("Usuario o contraseña incorrectos");
-        }
-    });
+    loginForm.addEventListener("submit", handleLogin);
 }
+
 
 // =================== ADMIN PANEL ===================
 if (document.getElementById("itemList")) {
@@ -72,3 +91,4 @@ if (document.getElementById("itemList")) {
         window.location.href = "index.html";
     });
 }
+
