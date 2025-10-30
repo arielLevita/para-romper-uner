@@ -40,9 +40,7 @@ buscarReservas.addEventListener('submit', e => {
 
     const documento = parseInt(documentoPaciente.value.trim());
 
-    const medicos = data.medicos;
-    const turnos = data.turnos;
-    const especialidades = data.especialidades;
+    const { obrasSociales, medicos, turnos, especialidades } = data;
     const reservasFiltradas = data.reservas.filter(reserva => reserva.documento === documento);
 
     console.log(reservasFiltradas);
@@ -60,81 +58,32 @@ buscarReservas.addEventListener('submit', e => {
         let turno = turnos.filter(turno => reserva.idTurno === turno.idTurno)[0];
         let medico = medicos.filter(medico => turno.idMedico === medico.idMedico)[0];
         let especialidad = especialidades.filter(especialidad => reserva.idEspecialidad === especialidad.idEspecialidad)[0];
+        let obraSocial = obrasSociales.filter(obraSocial => reserva.idObraSocial === obraSocial.idObraSocial)[0] || null;
+        
+        /* let valor = 0
+
+        if (reserva.idObraSocial && medico.obrasSocialesQueAcepta.includes(obraSocial.idObraSocial)) {
+            valor = parseInt(medico.valorConsulta * obraSocial.descuento / 100);
+        } */
+        
         div.innerHTML = `
-            <p>Turno con: ${medico.titulo} ${medico.nombreMedico} ${medico.apellidoMedico}.</p>
-            <p>${especialidad.nombreEspecialidad}
-            <img src="${medico.imagenMedico}" style="width: 100px;" />
-        `;
-        dFrag.appendChild(div);
-    })
-    listaReservas.appendChild(dFrag);
-});
-
-/* buscarReservas.addEventListener('submit', e => {
-    e.preventDefault();
-
-    const documento = parseInt(documentoPaciente.value.trim());
-
-    const { medicos, turnos, especialidades, reservas } = data;
-
-    const reservasFiltradas = reservas.filter(reserva => reserva.documento === documento);
-
-    console.log(`Reservas encontradas para ${documento}:`);
-    console.table(reservasFiltradas);
-
-    listaReservas.innerHTML = "";
-
-    if (reservasFiltradas.length === 0) {
-        listaReservas.innerHTML = '<div class="alert alert-info">No se encontraron reservas para este documento.</div>';
-        return;
-    }
-
-    let dFrag = document.createDocumentFragment();
-
-    reservasFiltradas.forEach(reserva => {
-
-        const turnoEncontrado = turnos.filter(t => t.idTurno === reserva.idTurno)[0];
-
-        if (!turnoEncontrado) {
-            console.error(`Turno con id ${reserva.idTurno} no encontrado.`);
-            return;
-        }
-
-        const medico = medicos.filter(m => m.idMedico === turnoEncontrado.idMedico)[0];
-        const especialidad = especialidades.filter(e => e.idEspecialidad === reserva.idEspecialidad)[0];
-
-        if (!medico || !especialidad) {
-            console.error(`Datos incompletos para la reserva ID: ${reserva.idReserva}.`);
-            return;
-        }
-
-        let div = document.createElement("div");
-        div.classList.add("col-md-6");
-        div.innerHTML = `
-            <div class="card shadow-sm">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="${medico.imagenMedico}" class="card-img-top" alt="Imagen de ${medico.apellidoMedico}">
                 <div class="card-body">
-                    <h5 class="card-title">${especialidad.nombreEspecialidad}</h5>
-                    <p class="card-text">
-                        <strong>Fecha/Hora:</strong> ${turnoEncontrado.día.charAt(0).toUpperCase() + turnoEncontrado.día.slice(1)} a las ${turnoEncontrado.hora}
-                    </p>
-                    <hr>
-                    <p class="card-text">
-                        <strong>Médico:</strong> ${medico.titulo} ${medico.nombreMedico} ${medico.apellidoMedico}
-                    </p>
-                    <p class="card-text">
-                        <strong>Matrícula:</strong> ${medico.matricula}
-                    </p>
-                    <p class="card-text">
-                        <strong>Costo de la Consulta:</strong> $${reserva.valorConsulta.toLocaleString('es-AR')}
-                    </p>
-                    <p class="card-text">
-                        <small class="text-muted">${medico.descripcionMedico}</small>
-                    </p>
-                    ${medico.imagenMedico ? `<img src="${medico.imagenMedico}" class="img-fluid rounded-start mt-2" alt="Imagen del Médico" style="max-width: 100px; height: auto;">` : ''}
+                    <h5 class="card-title">${medico.titulo} ${medico.nombreMedico} ${medico.apellidoMedico}</h5>
+                    <p class="card-text">${especialidad.nombreEspecialidad}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Obra Social: ${obraSocial ? obraSocial.nombreObraSocial : "Sin obra Social"}</li>
+                    <li class="list-group-item">Día: ${turno.dia}</li>
+                    <li class="list-group-item">Horario: ${turno.hora}</li>
+                    </ul>
+                    <div class="card-body">
+                    <li class="list-group-item">Valor de la consulta($): ${reserva.valorConsulta}</li>
                 </div>
             </div>
         `;
         dFrag.appendChild(div);
     })
     listaReservas.appendChild(dFrag);
-}); */
+});
