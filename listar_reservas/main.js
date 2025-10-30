@@ -55,17 +55,11 @@ buscarReservas.addEventListener('submit', e => {
     let dFrag = document.createDocumentFragment();
     reservasFiltradas.forEach(reserva => {
         let div = document.createElement("div");
-        let turno = turnos.filter(turno => reserva.idTurno === turno.idTurno)[0];
-        let medico = medicos.filter(medico => turno.idMedico === medico.idMedico)[0];
-        let especialidad = especialidades.filter(especialidad => reserva.idEspecialidad === especialidad.idEspecialidad)[0];
-        let obraSocial = obrasSociales.filter(obraSocial => reserva.idObraSocial === obraSocial.idObraSocial)[0] || null;
-        
-        /* let valor = 0
-
-        if (reserva.idObraSocial && medico.obrasSocialesQueAcepta.includes(obraSocial.idObraSocial)) {
-            valor = parseInt(medico.valorConsulta * obraSocial.descuento / 100);
-        } */
-        
+        let turno = turnos.find(turno => reserva.idTurno === turno.idTurno);
+        let medico = medicos.find(medico => turno.idMedico === medico.idMedico);
+        let especialidad = especialidades.find(especialidad => reserva.idEspecialidad === especialidad.idEspecialidad);
+        let obraSocial = obrasSociales.find(obraSocial => reserva.idObraSocial === obraSocial.idObraSocial) || null;
+                
         div.innerHTML = `
             <div class="card shadow" style="width: 18rem;">
                 <img src="${medico.imagenMedico}" class="card-img-top" alt="Imagen de ${medico.apellidoMedico}">
